@@ -1,0 +1,41 @@
+== Designråd ==
+1. Separera regler från grafik
+   - Spelreglerna ska kunna köras helt utan UI (bra för testning och AI).
+
+2. Data-driven design
+   - Regler, priser, händelser i JSON/ScriptableObjects
+   - Lätt att balansera och ändra
+
+3. Turordningsmotor först
+   Bygg ett stabilt system för:
+    - Spelarens tur
+    - Händelser
+    - Köpa/sälja/odla/logik
+   Grafik kommer sen.
+
+4. Börja utan AI
+   - Implementera hot-seat (lokalt flera spelare) först.
+
+5. Spara/ladda tidigt
+   - Brädspel kräver pålitlig sparning.
+
+
+== Rekommenderad start ==
+Unity (2D)
+C#
+
+Enkel prototyp:
+- Spelplan
+- Tärningsslag
+- Förflyttning
+- En spelare
+
+Lägg till regler stegvis
+
+
+== Övergripande principer ==
+- Regler ≠ presentation (MVC-liknande)
+- Ingen Unity-logik i spelreglerna
+- All speldata serialiserbar
+- State machine för turflöde
+

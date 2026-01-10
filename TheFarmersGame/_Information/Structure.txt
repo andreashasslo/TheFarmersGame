@@ -1,0 +1,13 @@
+Assets/
+ ├── Scripts/
+ │    ├── Core/          // Spelregler (ingen Unity-kod)
+ │    ├── GameFlow/      // Turordning, states
+ │    ├── Data/          // ScriptableObjects / JSON
+ │    ├── Presentation/ // UI, animation, ljud
+ │    ├── Input/
+ │    └── Persistence/
+ │
+ ├── Prefabs/
+ ├── ScriptableObjects/
+ ├── Scenes/
+ └── Art/

@@ -1,0 +1,91 @@
+=================================
+|| Kärnklasser (Core – ren C#) ||
+=================================
+
+--- GameState
+class GameState
+{
+    List<Player> Players;
+    int CurrentPlayerIndex;
+    Board Board;
+    RandomState RNG;
+}
+
+
+Allt som behövs för att spara/ladda spelet.
+
+//--- Player
+class Player
+{
+    string Id;
+    int Money;
+    int Position;
+    List<Property> Properties;
+    bool IsInDebt;
+}
+
+//--- Board / Tile
+class Board
+{
+    List<Tile> Tiles;
+}
+
+abstract class Tile
+{
+    int Index;
+    abstract void OnLand(GameState state, Player player);
+}
+
+
+Exempel:
+
+class FarmTile : Tile
+{
+    int Price;
+    int Income;
+
+    override void OnLand(GameState state, Player player)
+    {
+        player.Money += Income;
+    }
+}
+
+
+== Tur- och flödeslogik (GameFlow) ==
+
+//--- TurnManager
+class TurnManager
+{
+    void StartTurn();
+    void EndTurn();
+}
+
+//--- TurnState (State Machine)
+interface ITurnState
+{
+    void Enter(GameState state);
+    void Update();
+    void Exit();
+}
+
+Exempel:
+- RollDiceState
+- MovePlayerState
+- ResolveTileState
+- EndTurnState
+
+Detta gör reglerna tydliga och sekventiella.
+
+== Data (ScriptableObjects)
+//--- TileDefinition
+[CreateAssetMenu]
+class TileDefinition : ScriptableObject
+{
+    TileType Type;
+    int Price;
+    int Income;
+}
+
+Fördel:
+- Designers kan justera spelet utan kod
+- Regler blir data, inte hårdkod
