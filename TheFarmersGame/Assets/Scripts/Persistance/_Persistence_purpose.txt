@@ -1,0 +1,22 @@
+Syfte: Hantera lagring och hämtning av speldata, 
+t.ex. sparade spel, high scores, inställningar.
+
+Typiskt innehåll:
+ - Abstraktion över datalagring, t.ex. ISaveService
+ - Klasser som läser/skriver data i:
+  - JSON-filer
+  - ScriptableObjects (i Unity)
+  - PlayerPrefs, databas eller moln
+ - Kan även innehålla serialization/deserialization-logik
+ - Ska inte innehålla spelregler – bara datahantering
+
+Exempelstruktur
+Persistence/
+ ├── ISaveService.cs
+ ├── FileSaveService.cs
+ ├── JsonSaveService.cs
+ └── SaveData.cs
+
+Fördel:
+ - Core- och GameFlow-lager påverkas inte av hur och var data sparas
+ - Gör spelet mer modulärt och testbart

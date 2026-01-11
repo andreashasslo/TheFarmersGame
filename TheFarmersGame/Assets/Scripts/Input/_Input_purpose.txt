@@ -1,0 +1,25 @@
+Syfte: Hantera all input från spelaren på ett enhetligt sätt, 
+så att Core-motorn inte behöver veta om det är tangentbord, 
+mus, gamepad eller touch.
+
+Typiskt innehåll:
+ - Abstraktion över input: t.ex. IInputService eller IPlayerController
+ - Klasser/metoder som tolkar input till spelkommandon:
+   - “Rulla tärning”
+   - "Flytta till ruta”
+   - “Köp gård”
+ - Event eller callbacks till Core- eller GameFlow-lagret
+
+(I Unity kan det kopplas mot Input.GetKey, Input.GetButton etc., 
+men Core-koden behöver inte känna till det.)
+
+Exempelstruktur
+Input/
+ ├── IInputService.cs
+ ├── KeyboardInput.cs
+ ├── GamepadInput.cs
+ └── InputManager.cs
+
+Fördel:
+Gör Core-koden plattformoberoende: du kan byta från Unity 
+till annan motor utan att ändra spelreglerna.

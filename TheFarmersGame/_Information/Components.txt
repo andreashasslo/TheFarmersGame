@@ -1,0 +1,32 @@
+Crop markers:
+ - Rye
+ - Wheat
+ - Potatoes
+ - Beets
+ - Barley
+
+Event deck:
+ - 1st quarter
+   - Contents?
+ - 2nd quarter
+   - Contents?
+ - 3rd quarter
+   - Contents?
+ - 4th quarter
+   - Contents?
+
+Insurances
+
+Forest land
+
+Livestock 
+
+Money
+ - 1000
+ - 5000
+ - 10 000
+ - 50 000
+ - 100 000
+ - 500 000
+ - 1 000 000
+ - 5 000 000
