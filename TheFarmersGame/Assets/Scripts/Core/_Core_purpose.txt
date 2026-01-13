@@ -1,1 +1,19 @@
 Spelregler (ingen Unity-kod)
+
+1. Välj (skapa) en spelare
+    - Namn
+    - Färg (senare)
+    - Startplacering (senare)
+    - Inkassera startpengar
+    - Erhåll en startförsäkring
+2. Starta omgång
+    - Slumpa startspelare
+3. Spelares tur
+    - Slå tärning
+    - Flytta spelarpjäs
+    - Identifiera om rutan har händelser
+    - Identifiera säsong (påverkar vilken kortlek som ska användas)
+    - Genomför händelser
+    - Övriga spelarval (köpa skog, skörda etc)
+    - Nästa spelare
+
